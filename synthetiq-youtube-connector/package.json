@@ -1,0 +1,14 @@
+{
+  "name": "synthetiq-youtube-connector",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A secure YouTube OAuth and playlist connector for the Synthetiq Music app.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "check": "node --check src/server.js && node --check src/youtube.js && node --check public/synthetiq-youtube.js"
+  },
+  "engines": { "node": ">=20" }
+}
