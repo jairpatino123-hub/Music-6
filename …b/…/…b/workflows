@@ -1,0 +1,18 @@
+ (cd "$(git rev-parse --show-toplevel)" && printf '%s' 'diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000000000000000000000000000000000000..8df4822ac4c7b03966c208670198bb66c888fd11
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,11 @@
++name: CI
++on: [push, pull_request]
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++      - uses: actions/setup-node@v4
++        with: { node-version: 20 }
++      - run: npm test
++      - run: npm run check
+' | git apply --3way)
